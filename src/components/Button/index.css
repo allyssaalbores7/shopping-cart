@@ -1,0 +1,15 @@
+.ant-btn-lg {
+  @apply flex justify-center items-center text-primary_accent border-2 border-primary_accent rounded-sm;
+}
+.ant-btn-lg:hover {
+  @apply opacity-60 text-primary_accent border-2 border-primary_accent
+}
+.ant-btn:hover, .ant-btn:active {
+  @apply text-primary_accent border-primary_accent
+}
+.ant-btn-primary {
+  @apply flex justify-center items-center bg-primary_accent text-white rounded-sm;
+}
+.ant-btn-primary:hover {
+  @apply bg-primary_accent hover:opacity-90 text-white;
+}

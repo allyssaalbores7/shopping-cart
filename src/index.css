@@ -28,3 +28,7 @@
     filter: grayscale(100%);
   }
 }
+
+.ant-message .ant-message-success {
+  @apply flex justify-center items-center;
+}

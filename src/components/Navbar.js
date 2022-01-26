@@ -1,17 +1,26 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { Input } from "antd";
+import { Badge, Button, Input } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
-
-import BaseButton from "./Button/BaseButton";
 
 const { Search } = Input;
 
-export default function Navbar() {
-  const onSearch = (value) => console.log(value);
+export default function Navbar({ items }) {
+  // console.log(items);
+  // const menu = (
+  //   <Menu className="mx-12">
+  //     {items.map((item) => (
+  //       <Menu.Item>{item.display_name}</Menu.Item>
+  //     ))}
+
+  //     <Button type="primary" block>
+  //       Checkout
+  //     </Button>
+  //   </Menu>
+  // );
 
   return (
-    <nav className="bg-white">
+    <nav className="bg-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -71,19 +80,21 @@ export default function Navbar() {
               <Search
                 placeholder="What are you looking for?"
                 allowClear
-                onSearch={onSearch}
                 style={{ width: 350 }}
               />
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             <div className="flex space-x-10">
-              <BaseButton
-                title="My Cart"
-                type="primary"
-                icon={<ShoppingCartOutlined />}
-                size="regular"
-              />
+              <Badge count={items.length}>
+                <Button
+                  type="primary"
+                  icon={<ShoppingCartOutlined />}
+                  size="regular"
+                >
+                  Cart
+                </Button>
+              </Badge>
             </div>
           </div>
         </div>

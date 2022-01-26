@@ -7,12 +7,12 @@ export default function Hero() {
     <div className="relative bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-flow-row-dense lg:grid-cols-5">
         <div className="relative lg:col-span-2 z-10 pb-8 bg-white">
-          <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+          <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:my-12 lg:mt-20 lg:px-8 xl:mt-28">
             <div className="sm:text-center lg:text-left">
               <p className="mt-3 text-secondary_accent font-semibold sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-2xl lg:mx-0 mb-4">
                 Lorem ipsum dolor
               </p>
-              <h1 className="text-3xl text-primary_text tracking-normal font-extrabold text-gray-900 sm:text-3xl md:text-4xl">
+              <h1 className="font-poppins text-3xl text-primary_text tracking-normal font-extrabold text-gray-900 sm:text-3xl md:text-4xl">
                 <span className="block xl:inline">Lorem ipsum dolor sit</span>{" "}
                 <span className="block text-indigo-600 xl:inline">
                   amet consectetur

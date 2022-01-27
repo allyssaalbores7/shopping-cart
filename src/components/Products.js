@@ -41,7 +41,7 @@ export default function Products({ addToCart }) {
         <p className="mt-8 text-2xl font-bold text-primary_text lg:mx-auto">
           Browse our products
         </p>
-        <Table dataSource={data.data}>
+        <Table dataSource={data.data} rowKey="id" scroll={{ x: 600 }}>
           <Column
             title="Product Name"
             dataIndex="display_name"

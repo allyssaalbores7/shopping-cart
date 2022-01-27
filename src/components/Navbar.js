@@ -1,23 +1,33 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Badge, Button, Input } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
+import { db } from "../firebase-config";
 
 const { Search } = Input;
 
-export default function Navbar({ items }) {
-  // console.log(items);
-  // const menu = (
-  //   <Menu className="mx-12">
-  //     {items.map((item) => (
-  //       <Menu.Item>{item.display_name}</Menu.Item>
-  //     ))}
+export default function Navbar() {
+  const navigate = useNavigate();
+  const [items, setItems] = useState([]);
 
-  //     <Button type="primary" block>
-  //       Checkout
-  //     </Button>
-  //   </Menu>
-  // );
+  const getItems = () => {
+    db.collection("items")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((querySnapshot) => {
+        setItems(
+          querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            item: doc.data().item,
+          }))
+        );
+      });
+  };
+
+  useEffect(() => {
+    getItems();
+  }, []);
 
   return (
     <nav className="bg-white sticky top-0 z-50">
@@ -64,7 +74,12 @@ export default function Navbar({ items }) {
             </button>
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex-shrink-0 flex items-center">
+            <div
+              className="flex-shrink-0 flex items-center cursor-pointer"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
               <img
                 className="block lg:hidden h-10 w-auto"
                 src="https://i.imgur.com/jLXVuor.png"
@@ -91,6 +106,9 @@ export default function Navbar({ items }) {
                   type="primary"
                   icon={<ShoppingCartOutlined />}
                   size="regular"
+                  onClick={() => {
+                    navigate("/cart");
+                  }}
                 >
                   Cart
                 </Button>

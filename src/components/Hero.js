@@ -25,10 +25,16 @@ export default function Hero() {
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="mt-3 sm:mt-0">
-                  <BaseButton title="Shop now" type="primary" size="large" />
+                  <BaseButton
+                    href="#products"
+                    title="Shop now"
+                    type="primary"
+                    size="large"
+                  />
                 </div>
                 <div className="mt-3 sm:mt-0 sm:ml-5">
                   <BaseButton
+                    href="#products"
                     title="Partner with us"
                     type="default"
                     size="large"

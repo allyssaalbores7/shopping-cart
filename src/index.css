@@ -28,7 +28,12 @@
     filter: grayscale(100%);
   }
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .ant-message .ant-message-success {
   @apply flex justify-center items-center;
+}
+.ant-row, .checkout .ant-btn {
+  @apply w-full;
 }

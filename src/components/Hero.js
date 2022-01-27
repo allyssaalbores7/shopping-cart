@@ -25,7 +25,7 @@ export default function Hero() {
                 providing them with world-class customer service, and affordable
                 grocery supplies - delivered right at their doorstep!
               </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+              <div className="hero-button mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="mt-3 sm:mt-0">
                   <BaseButton
                     href="#products"

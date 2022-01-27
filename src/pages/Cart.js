@@ -85,16 +85,24 @@ export default function Cart() {
           <p className="font-bold text-xl">Total</p>
           <p className="text-secondary_accent">PHP {sum}</p>
         </div>
-        <div className="checkout flex justify-center items-center mt-14 gap-6">
-          <BaseButton
-            title="Back to Home"
-            type="default"
-            size="large"
-            onClick={() => {
-              navigate("/");
-            }}
-          />
-          <BaseButton title="Proceed to Checkout" type="primary" size="large" />
+        <div className="checkout flex flex-wrap sm:flex-nowrap sm:justify-center lg:justify-start items-center mt-14">
+          <div className="w-full mt-3 sm:mt-0">
+            <BaseButton
+              title="Back to home"
+              type="default"
+              size="large"
+              onClick={() => {
+                navigate("/");
+              }}
+            />
+          </div>
+          <div className="w-full mt-3 sm:mt-0 sm:ml-5">
+            <BaseButton
+              title="Proceed to checkout"
+              type="primary"
+              size="large"
+            />
+          </div>
         </div>
       </div>
     </>

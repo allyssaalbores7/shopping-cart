@@ -19,6 +19,9 @@
 .env.test.local
 .env.production.local
 .eslintrc.json
+firestore.rules
+firestore.indexes.json
+firebase.json
 
 npm-debug.log*
 yarn-debug.log*

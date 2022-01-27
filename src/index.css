@@ -40,3 +40,9 @@ hr {
 .ant-row, .checkout .ant-btn {
   @apply w-full;
 }
+.hero-button .ant-btn span {
+  @apply mt-1;
+}
+.ant-list-item {
+  @apply gap-4;
+}

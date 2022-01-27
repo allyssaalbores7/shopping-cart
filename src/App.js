@@ -6,7 +6,7 @@ import Cart from "./pages/Cart";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App font-inter">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="cart" element={<Cart />} />
